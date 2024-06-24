@@ -1,0 +1,99 @@
+/* Reset di margini e padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Stile per il link attivo nella navbar */
+.nav-link.active {
+    text-decoration: underline; 
+}
+
+/* Evita lo scorrimento del body */
+body {
+    overflow: hidden;
+}
+
+#navbar {
+    padding: 0 5vw;
+}
+
+/* Stile per la sezione homepage */ 
+.homepage {
+    padding: 12% 8%;
+    background-image: url('/assets/images/homepage.jpg');
+    background-size: cover;
+    position: relative; 
+    width: 100%;
+    color: white;
+}
+
+/* Sovrapposizione di un overlay scuro sulla homepage */
+.homepage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+/* Garantire che il contenuto della homepage sia sopra l'overlay */
+.homepage > * {
+    position: relative;
+    z-index: 1;
+}
+
+.homepage h1 {
+    font-weight: bold;
+    font-size: 6vw;
+    margin: 0;
+}
+
+.homepage p {
+    font-weight: light;
+    font-size: 2vw;
+    padding-left: 0.4%;
+    margin-bottom: 0;
+}
+
+/* Stile per la sezione "explore-now" */
+.explore-now {
+    margin-top: 3vw;
+}
+
+.explore-now a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;   
+    font-size: 2vw;
+    padding: 0 5%;
+}
+
+.explore-now a:hover {
+    color: lightgrey;
+}
+
+/* Media Query per il responsive - iPhone 11 Pro iOS 14.6 */
+@media screen and (max-width: 430px) and (max-height: 932px) {
+
+    .homepage {
+        height: 250vw;
+        padding: 80vw 10vw;
+    }
+
+    .homepage h1 {
+        font-size: 12vw;
+    }
+
+    .homepage p {
+        font-size: 6vw;
+    }
+
+    .explore-now a {
+        font-size: 6vw;
+    }
+
+}
